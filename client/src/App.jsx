@@ -16,6 +16,8 @@ const App = () => {
 		setFetchedVideos(false);
 	}, [fetchedVideos]);
 
+	console.log(videos);
+
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		const formData = Object.fromEntries(new FormData(e.target));
@@ -29,7 +31,6 @@ const App = () => {
 
 		if (response.ok) {
 			setFetchedVideos(true);
-			
 		}
 
 		if (!response.ok) {
